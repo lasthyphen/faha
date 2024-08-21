@@ -13,7 +13,6 @@ import {
 	NavigationMenuLink,
 	NavigationMenuList,
 	NavigationMenuTrigger,
-	navigationMenuTriggerStyle,
 } from "@/ui/shadcn/navigation-menu";
 import { YnsLink } from "@/ui/YnsLink";
 
