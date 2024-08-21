@@ -1,6 +1,5 @@
 import Image from 'next/image'
 import { CartSummaryNav } from "@/ui/nav/CartSummaryNav";
-import { SeoH1 } from "@/ui/SeoH1";
 import { SearchNav } from "@/ui/nav/SearchNav";
 import { NavMenu } from "@/ui/nav/NavMenu";
 import { YnsLink } from "@/ui/YnsLink";
