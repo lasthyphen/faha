@@ -18,6 +18,7 @@ const nextConfig = {
 	images: {
 		remotePatterns: [
 			{ hostname: "files.stripe.com" },
+			{ hostname: "tokens.dijets.io" },
 			{ hostname: "d1wqzb5bdbcre6.cloudfront.net" },
 			{ hostname: "*.blob.vercel-storage.com" },
 		],

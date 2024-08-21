@@ -1,15 +1,5 @@
 # Your Next Store
 
-<div align="center">
-<table>
-<tr>
-<td>
-	<a href="https://yournextstore.com/discord"><img src="https://img.shields.io/discord/1206629600483082341?style=for-the-badge&logo=discord&logoColor=white&labelColor=%235865F2&color=%23555" alt="Join Discord" /></a>
-</td>
-<td>
-	<a href="https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fyournextstore%2Fyournextstore&env=ENABLE_EXPERIMENTAL_COREPACK,NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY,STRIPE_SECRET_KEY,STRIPE_CURRENCY&envDescription=Read%20more%20about%20required%20env%20variables%20in%20YNS&envLink=https%3A%2F%2Fgithub.com%2Fyournextstore%2Fyournextstore%2Ftree%2Fupcoming%3Ftab%3Dreadme-ov-file%23add-environmental-variables&project-name=yournextstore&repository-name=yournextstore&demo-title=Your%20Next%20Store&demo-description=A%20Next.js%20boilerplate%20for%20building%20your%20online%20store%20instantly%3A%20simple%2C%20quick%2C%20powerful.&demo-url=https%3A%2F%2Fdemo.yournextstore.com%2F&demo-image=https%3A%2F%2Fyournextstore.com%2Fdemo.png"><img src="https://vercel.com/button" alt="Deploy with Vercel" /></a>
-</td>
-<td>
 <a href="https://www.producthunt.com/posts/your-next-store?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-your&#0045;next&#0045;store">
 	<picture>
 		<source
@@ -18,22 +8,12 @@
 		/>
 		<img
 			src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=459751&theme=light"
-			height="36"
 			alt="Your&#0032;Next&#0032;Store - E&#0045;Commerce&#0032;with&#0032;Stripe&#0032;as&#0032;the&#0032;backend | Product Hunt"
 		/>
 	</picture>
-</a>
-</td>
-</tr>
-</table>
+</a><br/><br/>
 
 👉 [demo.yournextstore.com](https://demo.yournextstore.com/) 👈
-
-</div>
-
-## Demo
-
-https://github.com/user-attachments/assets/64197310-29bd-4dd3-a736-1494340e20e8
 
 ## Prerequisites
 
@@ -73,17 +53,17 @@ Once you're ready to sell your products to real customers, you must switch **Tes
 
 ## Add Environment Variables
 
-For YNS to work, you'll need to define a few environmental variables. For local development and testing, you may create an empty `.env` file and copy the contents of `.env.example` into it.
+For YNS to work, you'll need to define a few environmental variables. For local development and testing, you may create an empty `.env` file and copy the contents of `.env-example` into it.
 
 To set env variables in production, you'll need to consult the documentation of your chosen hosting provider.
 
 ### Required Environment Variables
 
-- `ENABLE_EXPERIMENTAL_COREPACK` – Vercel only: Set to `1` to enable Corepack
 - `NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY` – Publishable key from Stripe.
 - `STRIPE_SECRET_KEY` – Secret key from Stripe.
 - `STRIPE_CURRENCY` – This is used to determine your store's currency. Currently, only a single currency is allowed, and it should be a three-letter ISO code (e.g., `usd`).
-- `NEXT_PUBLIC_URL` – **Optional on Vercel** The address of your store without the trailing slash, i.e., `https://demo.yournextstore.com`. When building for the first time, you should set it to any valid URL, i.e. `http://localhost:3000`.
+- `NEXT_PUBLIC_URL` – The address of your store without the trailing slash, i.e., `https://demo.yournextstore.com`
+- `ENABLE_EXPERIMENTAL_COREPACK` – Vercel only: Set to `1` to enable Corepack
 
 https://github.com/yournextstore/.github/assets/200613/01d27f69-00dc-446e-bc81-5dea2587f346
 
@@ -92,7 +72,7 @@ https://github.com/yournextstore/.github/assets/200613/01d27f69-00dc-446e-bc81-5
 - `NEXT_PUBLIC_UMAMI_WEBSITE_ID` – Umami website ID for analytics
 - `NEXT_PUBLIC_NEWSLETTER_ENDPOINT` – **Preview**: The endpoint for the newsletter form in the future. It should accept POST requests with a JSON `{ email: string }` and return JSON `{ status: number }`.
 - `STRIPE_WEBHOOK_SECRET` – **Preview**: Stripe Webhook secret for handling events from Stripe. Read more below.
-- `ENABLE_STRIPE_TAX` – **Preview**: Set to any value (i.e., `1`) to enable Stripe Tax in YNS. Read more below.
+- `ENABLE_STRIPE_TAXES` – **Preview**: Set to any value (i.e., `1`) to enable Stripe Tax in YNS. Read more below.
 - `NEXT_PUBLIC_LANGUAGE` - The language of the store.
 
 ## Run the store
@@ -143,12 +123,12 @@ Your Next Store uses Stripe Webhooks to handle events from Stripe. Currently, th
 
 The endpoint for the webhook is `https://{YOUR_DOMAIN}/api/stripe-webhook`. The only required event is `payment_intent.succeeded`. When the webhook is configured in Stripe, set the `STRIPE_WEBHOOK_SECRET` environment variable to the secret key created by Stripe.
 
-> [!NOTE]
+> [!INFO]
 > In the future, we plan to add more events to the webhook to improve the user experience.
 
 ## Stripe Tax
 
-Your Next Store comes with a preview of Stripe Tax support. To enable it, set the `ENABLE_STRIPE_TAX` environment variable to any value (i.e., `1`).
+Your Next Store comes with a preview of Stripe Tax support. To enable it, set the `ENABLE_STRIPE_TAXES` environment variable to any value (i.e., `1`).
 
 For this feature to work, you must set your Tax settings in Stripe Dashboard: [dashboard.stripe.com/register/tax](https://dashboard.stripe.com/register/tax). When enabled and configured, taxes will be automatically calculated and added to the total price of the product based on:
 
@@ -166,7 +146,7 @@ For this feature to work, you must set your Tax settings in Stripe Dashboard: [d
 
 To deploy on Vercel, click the following button, set up your GitHub repository and environment variables, and click **Deploy**. Make sure to set the `ENABLE_EXPERIMENTAL_COREPACK` variable to `1`.
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fyournextstore%2Fyournextstore&env=ENABLE_EXPERIMENTAL_COREPACK,NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY,STRIPE_SECRET_KEY,STRIPE_CURRENCY&envDescription=Read%20more%20about%20required%20env%20variables%20in%20YNS&envLink=https%3A%2F%2Fgithub.com%2Fyournextstore%2Fyournextstore%2Ftree%2Fupcoming%3Ftab%3Dreadme-ov-file%23add-environmental-variables&project-name=yournextstore&repository-name=yournextstore&demo-title=Your%20Next%20Store&demo-description=A%20Next.js%20boilerplate%20for%20building%20your%20online%20store%20instantly%3A%20simple%2C%20quick%2C%20powerful.&demo-url=https%3A%2F%2Fdemo.yournextstore.com%2F&demo-image=https%3A%2F%2Fyournextstore.com%2Fdemo.png)
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fyournextstore%2Fyournextstore&env=ENABLE_EXPERIMENTAL_COREPACK,NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY,STRIPE_SECRET_KEY,STRIPE_CURRENCY,NEXT_PUBLIC_URL&envDescription=Read%20more%20about%20required%20env%20variables%20in%20YNS&envLink=https%3A%2F%2Fgithub.com%2Fyournextstore%2Fyournextstore%2Ftree%2Fupcoming%3Ftab%3Dreadme-ov-file%23add-environmental-variables&project-name=yournextstore&repository-name=yournextstore&demo-title=Your%20Next%20Store&demo-description=A%20Next.js%20boilerplate%20for%20building%20your%20online%20store%20instantly%3A%20simple%2C%20quick%2C%20powerful.&demo-url=https%3A%2F%2Fdemo.yournextstore.com%2F&demo-image=https%3A%2F%2Fyournextstore.com%2Fdemo.png)
 
 ### Your Own VPS
 

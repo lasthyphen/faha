@@ -73,6 +73,10 @@
 	body {
 		@apply bg-background text-foreground;
 	}
+	.text-base {
+		font-size: 0.82rem !important;
+		line-height: 1.2rem;
+	}
 }
 
 @layer utilities {
@@ -90,11 +94,59 @@
 	}
 }
 
+@font-face {
+	font-family: gulliver;
+	src: url("/fonts/ElsevierGulliver-Regular.woff2") format("woff2");
+	font-weight: 400;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: calibre;
+	src: url("/fonts/FeyCalibre-Regular.woff2") format("woff2");
+	font-weight: 400;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: calibre;
+	src: url("/fonts/FeyCalibre-Regular.woff") format("woff");
+	font-weight: 400;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: calibre-light;
+	src: url("/fonts/FeyCalibre-light.woff2") format("woff2");
+	font-weight: 300;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: calibre-light;
+	src: url("/fonts/FeyCalibre-light.woff") format("woff");
+	font-weight: 300;
+	font-style: normal;
+	font-display: swap;
+}
+
 label:has([required]) > span:first-child {
 	&::after {
 		content: "*";
 		@apply ml-1 text-destructive;
 	}
+}
+
+h2 {
+	font-family: gulliver, sans-serif !important;
+}
+
+p {
+	font-family: calibre, sans-serif !important;
 }
 
 .CollapsibleContent {

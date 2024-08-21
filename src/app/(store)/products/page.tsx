@@ -2,13 +2,13 @@ import type { Metadata } from "next/types";
 import { getTranslations } from "next-intl/server";
 import * as Commerce from "commerce-kit";
 import { ProductList } from "@/ui/products/productList";
-import { publicUrl } from "@/env.mjs";
+import { env } from "@/env.mjs";
 
 export const generateMetadata = async (): Promise<Metadata> => {
 	const t = await getTranslations("/products.metadata");
 	return {
 		title: t("title"),
-		alternates: { canonical: `${publicUrl}/products` },
+		alternates: { canonical: `${env.NEXT_PUBLIC_URL}/products` },
 	};
 };
 

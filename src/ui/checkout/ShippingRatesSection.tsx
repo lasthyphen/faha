@@ -10,7 +10,7 @@ export const ShippingRatesSection = ({
 	value,
 	onChange,
 }: {
-	shippingRates: Commerce.MappedShippingRate[];
+	shippingRates: Commerce.ShippingRate[];
 	value: string | null | undefined;
 	onChange: (value: string) => void;
 }) => {
@@ -67,7 +67,7 @@ export const ShippingRatesSection = ({
 export const FormatDeliveryEstimate = ({
 	estimate,
 }: {
-	estimate: Commerce.MappedShippingRate["delivery_estimate"];
+	estimate: Commerce.ShippingRate["delivery_estimate"];
 }) => {
 	const t = useTranslations("Global.deliveryEstimates");
 	if (!estimate?.minimum && !estimate?.maximum) {

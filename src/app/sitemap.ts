@@ -1,19 +1,17 @@
 import { type MetadataRoute } from "next";
 import * as Commerce from "commerce-kit";
-import { publicUrl } from "@/env.mjs";
-
-const Categories = [
-	{ name: "Apparel", slug: "apparel" },
-	{ name: "Accessories", slug: "accessories" },
-];
+import { env } from "@/env.mjs";
+import { Categories } from "@/ui/nav/Nav";
 
 type Item = MetadataRoute.Sitemap[number];
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
+	const base = env.NEXT_PUBLIC_URL;
+
 	const products = await Commerce.productBrowse({ first: 100 });
 	const productUrls = products.map(
 		(product) =>
 			({
-				url: `${publicUrl}/product/${product.metadata.slug}`,
+				url: `${base}/product/${product.metadata.slug}`,
 				lastModified: new Date(product.updated * 1000),
 				changeFrequency: "daily",
 				priority: 0.8,
@@ -23,7 +21,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 	const categoryUrls = Categories.map(
 		(category) =>
 			({
-				url: `${publicUrl}/category/${category.slug}`,
+				url: `${base}/category/${category.slug}`,
 				lastModified: new Date(),
 				changeFrequency: "daily",
 				priority: 0.5,
@@ -32,7 +30,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
 	return [
 		{
-			url: publicUrl,
+			url: base,
 			lastModified: new Date(),
 			changeFrequency: "always",
 			priority: 1,

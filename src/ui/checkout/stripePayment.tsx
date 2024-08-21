@@ -31,7 +31,7 @@ export const StripePayment = ({
 	shippingRates,
 }: {
 	shippingRateId?: string | null;
-	shippingRates: Commerce.MappedShippingRate[];
+	shippingRates: Commerce.ShippingRate[];
 }) => {
 	return <PaymentForm shippingRates={shippingRates} cartShippingRateId={shippingRateId ?? null} />;
 };
@@ -40,7 +40,7 @@ const PaymentForm = ({
 	shippingRates,
 	cartShippingRateId,
 }: {
-	shippingRates: Commerce.MappedShippingRate[];
+	shippingRates: Commerce.ShippingRate[];
 	cartShippingRateId: string | null;
 }) => {
 	const t = useTranslations("/cart.page.stripePayment");

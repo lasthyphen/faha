@@ -1,8 +1,8 @@
 {
 	"Global": {
 		"metadata": {
-			"title": "Your Next Store - Demo",
-			"description": "A Next.js boilerplate for building your online store instantly: simple, quick, powerful."
+			"title": "Faha Couture - Shop Online",
+			"description": "Faha Couture is one of the leading independent Asian fashion retailers."
 		},
 		"notFound": {
 			"title": "Not found",
@@ -19,7 +19,7 @@
 			"goBackLink": "Try again"
 		},
 		"footer": {
-			"newsletterTitle": "Subscribe to our newsletter",
+			"newsletterTitle": "Subscribe to Faha's newsletter",
 			"categoriesTitle": "Products"
 		},
 		"newsletter": {
@@ -31,7 +31,7 @@
 		"nav": {
 			"search": {
 				"title": "Search",
-				"placeholder": "Search for products…"
+				"placeholder": "Search Faha Catalogues…"
 			},
 			"cartSummary": {
 				"itemsInCart": "Items in cart",
@@ -55,10 +55,10 @@
 	},
 	"/": {
 		"hero": {
-			"title": "Discover our Curated Collection",
+			"title": "Discover Faha's Curated Collection",
 			"description": "Explore our carefully selected products for your home and lifestyle.",
 			"action": "Shop Now",
-			"link": "/category/accessories"
+			"link": "/products"
 		}
 	},
 	"/search": {
@@ -129,7 +129,7 @@
 			},
 			"stripePayment": {
 				"fillRequiredFields": "Please fill in the required fields.",
-				"unexpectedError": "An unexpected error occurred.",
+				"unexpectedError": "An unexpected error occured.",
 				"billingSameAsShipping": "Billing address same as shipping",
 				"billingAddressTitle": "Billing address",
 				"payNowButton": "Pay now",
